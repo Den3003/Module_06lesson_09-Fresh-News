@@ -1,0 +1,23 @@
+.search-box {
+  position: relative;
+  display: flex;
+  max-width: 500px;
+  
+}
+
+.search-box__input {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 22px;
+  padding: 16px 60px 16px 20px;
+}
+
+.search-box__button {
+  position: absolute;
+  top: 15px;
+  right: 22px;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  border: none;
+}

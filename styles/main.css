@@ -1,0 +1,15 @@
+.fresh-news__title {
+  margin: 0 0 20px;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  margin: 0 0 40px;
+}
+
+.fresh-news {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 0 23px;
+}

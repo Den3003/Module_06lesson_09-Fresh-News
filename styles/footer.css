@@ -1,0 +1,30 @@
+.footer {
+  margin: 0 0 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.footer__logo {
+  margin: 0 0 9px;
+}
+
+.social-block {
+  display: flex;
+  gap: 0 15px;
+  margin: 0 0 13px;
+}
+
+.footer__site-date {
+  margin: 0;
+  font-size: 12px;
+  line-height: 130%;
+  color: #212121;
+}
+
+.social-link {
+  font-size: 0;
+}
