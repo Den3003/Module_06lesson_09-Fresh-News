@@ -13,3 +13,18 @@
   border-bottom: 1px solid #e6e6e6;
   margin: 0 0 23px;
 }
+
+.search-news {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 0 20px;
+  display: none;
+}
+
+.search-news__title {
+  margin: 0 0 20px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 130%;
+}
+

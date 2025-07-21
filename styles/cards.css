@@ -13,11 +13,14 @@
 }
 
 .card-news__image {
+  max-width: 100%;
   display: block;
   margin-bottom: 10px;
+  /* object-fit: cover; */
 }
 
 .card-news__title-block {
+  min-height: 83.19px;
   display: flex;
   margin: 0 0 10px;
 }
@@ -50,6 +53,7 @@
 
 .card-news__description {
   color: #212121;
+  min-height: 31.19px;
   font-size: 12px;
   line-height: 130%;
   margin: 0 0 10px;

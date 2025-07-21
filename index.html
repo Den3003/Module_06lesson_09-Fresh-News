@@ -7,6 +7,7 @@
   <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/index.css">
+  <script type="module" src="script/script.js"></script>
   <title>Только свежие новости</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
       <svg class="header__logo" width="76" height="40" viewBox="0 0 76 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <use href="#logo"></use>
       </svg>
-      <form class="search-box header__search-box" action="#" method="post">
-        <input class="search-box__input" type="text" name="search" placeholder="Я хочу узнать про...">
+      <form class="search-box header__search-box js-search-box" action="#" method="post">
+        <input class="search-box__input js-search-input" type="text" name="search" placeholder="Я хочу узнать про...">
         <button class="search-box__button" type="submit">
           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <use href="#search-icon"></use>
@@ -24,120 +25,173 @@
         </button>
       </form>
       <div class="choose-country-wrapper header__choose-country-wrapper">
-        <select name="country" class="choose-country" id="country">
-          <option value="Россия">Россия</option>
+        <select name="country" class="choose-country js-choose-country" id="country">
+          <option selected value="ru">Россия</option>
+          <option value="us">Америка</option>
+          <option value="de">Германия</option>
+          <option value="fr">Франция</option>
         </select>
       </div>
     </div>
   </header>
   <main>
-    <section class="fresh-news">
+    <section class="search-news js-search-news">
       <div class="container">
-        <h2 class="fresh-news__title">Свежие новости</h2>
+        <p class="search-news__title js-search-news-title">По вашему запросу "<span class="search-news__add-search js-add-search"></span>" найдено <span class="search-news__count-serach js-count-search"></span> результатов</p>
       </div>
       <hr class="line">
       <div class="container">
-        <ul class="flex-cards-container">
-          <li class="card-news">
-            <img class="card-news__image" src="./images/image1.jpg" alt="image">
-            <div class="card-news__title-block">
-              <h3 class="card-news__title">
-                В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы
-              </h3>
-              <a class="card-news__link" href="#">
-                <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <use href="#card-news-arrow"></use>
-                </svg>
-              </a>
-            </div>
-            <p class="card-news__description">
-              Холдинг «Российские космические системы», входящий в состав «Роскосмоса» Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint fugit rem natus vitae. Incidunt, repellendus! Praesentium asperiores rerum deleniti excepturi, vero iusto blanditiis at reprehenderit, officia eos, consectetur illum magni!
-            </p>
-            <div class="card-news__footer">
-              <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time>
-              <p class="card-news__author">Эрик Крипке</p>
-            </div>
-          </li>
-          <li class="card-news">
-            <img class="card-news__image" src="./images/image1.jpg" alt="image">
-            <div class="card-news__title-block">
-              <h3 class="card-news__title">
-                В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы
-              </h3>
-              <a class="card-news__link" href="#">
-                <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <use href="#card-news-arrow"></use>
-                </svg>
-              </a>
-            </div>
-            <p class="card-news__description">
-              Холдинг «Российские космические системы», входящий в состав «Роскосмоса»...
-            </p>
-            <div class="card-news__footer">
-              <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time>
-              <p class="card-news__author">Эрик Крипке</p>
-            </div>
-          </li>
-          <li class="card-news">
-            <img class="card-news__image" src="./images/image1.jpg" alt="image">
-            <div class="card-news__title-block">
-              <h3 class="card-news__title">
-                В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы
-              </h3>
-              <a class="card-news__link" href="#">
-                <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <use href="#card-news-arrow"></use>
-                </svg>
-              </a>
-            </div>
-            <p class="card-news__description">
-              Холдинг «Российские космические системы», входящий в состав «Роскосмоса»...
-            </p>
-            <div class="card-news__footer">
-              <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time>
-              <p class="card-news__author">Эрик Крипке</p>
-            </div>
-          </li>
-          <li class="card-news">
-            <img class="card-news__image" src="./images/image1.jpg" alt="image">
-            <div class="card-news__title-block">
-              <h3 class="card-news__title">
-                В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и  материалы
-              </h3>
-              <a class="card-news__link" href="#">
-                <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"  xmlns="http://www.w3.org/2000/svg">
-                  <use href="#card-news-arrow"></use>
-                </svg>
-              </a>
-            </div>
-            <p class="card-news__description">
-              Холдинг «Российские космические системы», входящий в состав «Роскосмоса»...
-            </p>
-            <div class="card-news__footer">
-              <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time>
-              <p class="card-news__author">Эрик Крипке</p>
-            </div>
-          </li>
-          <li class="card-news">
-            <img class="card-news__image" src="./images/image1.jpg" alt="image">
-            <div class="card-news__title-block">
-              <h3 class="card-news__title">
-                В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и  материалы
-              </h3>
-              <a class="card-news__link" href="#">
-                <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"  xmlns="http://www.w3.org/2000/svg">
-                  <use href="#card-news-arrow"></use>
-                </svg>
-              </a>
-            </div>
-            <p class="card-news__description">
-              Холдинг «Российские космические системы», входящий в состав «Роскосмоса»...
-            </p>
-            <div class="card-news__footer">
-              <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time>
-              <p class="card-news__author">Эрик Крипке</p>
-            </div>
-          </li>
+        <ul class="flex-cards-container js-flex-cards-search-container">
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса» Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint fugit rem natus vitae. Incidunt, repellendus! Praesentium asperiores rerum deleniti excepturi, vero iusto blanditiis at reprehenderit, officia eos, consectetur illum magni! -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса» Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint fugit rem natus vitae. Incidunt, repellendus! Praesentium asperiores rerum deleniti excepturi, vero iusto blanditiis at reprehenderit, officia eos, consectetur illum magni! -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+        </ul>
+      </div>
+    </section>
+    <section class="fresh-news">
+      <div class="container">
+        <h2 class="fresh-news__title js-fresh-news-title">Свежие новости</h2>
+      </div>
+      <hr class="line">
+      <div class="container">
+        <ul class="flex-cards-container js-flex-cards-fresh-container">
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса» Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint fugit rem natus vitae. Incidunt, repellendus! Praesentium asperiores rerum deleniti excepturi, vero iusto blanditiis at reprehenderit, officia eos, consectetur illum magni! -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса»... -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса»... -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и  материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"  xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса»... -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
+          <!-- <li class="card-news"> -->
+            <!-- <img class="card-news__image" src="./images/image1.jpg" alt="image"> -->
+            <!-- <div class="card-news__title-block"> -->
+              <!-- <h3 class="card-news__title"> -->
+                <!-- В России начали выпускать суверенные печатные платы — в них только отечественное сырьё и  материалы -->
+              <!-- </h3> -->
+              <!-- <a class="card-news__link" href="#"> -->
+                <!-- <svg class="card-news__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"  xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <use href="#card-news-arrow"></use> -->
+                <!-- </svg> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <!-- <p class="card-news__description"> -->
+              <!-- Холдинг «Российские космические системы», входящий в состав «Роскосмоса»... -->
+            <!-- </p> -->
+            <!-- <div class="card-news__footer"> -->
+              <!-- <time class="card-news__date" datetime="2022-03-16T11:06">16/03/2022&emsp;11:06</time> -->
+              <!-- <p class="card-news__author">Эрик Крипке</p> -->
+            <!-- </div> -->
+          <!-- </li> -->
         </ul>
       </div>
     </section>
@@ -147,7 +201,7 @@
       <svg class="footer__logo" width="76" height="40" viewBox="0 0 76 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <use href="#logo"></use>
       </svg>
-      <p class="footer__site-date">&copy; <time datetime="2020">2020-2025</time> News</p>
+      <p class="footer__site-date">&copy; <time datetime="2020">2020-<span class="js-site-date-span"></span></time> News</p>
       <div class="social-block">
         <a class="social-link" target="_blank" href="https://twitter.com">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,6 +259,11 @@
       </symbol>
     </svg>
 
+  </div>
+  <div class="preload-wrapper js-preload-wrapper">
+    <svg class="preload" width="166" height="120" viewBox="0 0 166 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M135.5 30L105.5 60H128C128 84.825 107.825 105 83 105C75.425 105 68.225 103.125 62 99.75L51.05 110.7C60.275 116.55 71.225 120 83 120C116.15 120 143 93.15 143 60H165.5L135.5 30ZM38 60C38 35.175 58.175 15 83 15C90.575 15 97.775 16.875 104 20.25L114.95 9.3C105.725 3.45 94.775 0 83 0C49.85 0 23 26.85 23 60H0.5L30.5 90L60.5 60H38Z" fill="black"/>
+    </svg>
   </div>
 </body>
 </html>

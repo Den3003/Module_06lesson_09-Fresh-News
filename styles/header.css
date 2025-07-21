@@ -12,7 +12,9 @@
 }
 
 .header__logo {
+  position: relative;
   grid-area: logo;
+  z-index: 15;
 }
 
 .header__search-box {
